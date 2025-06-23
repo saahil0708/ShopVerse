@@ -1,4 +1,5 @@
 import { Search, ShoppingBag, Heart, Sparkles } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function Navbar() {
   return (
@@ -25,9 +26,11 @@ export default function Navbar() {
           </div>
         </div>
         <div className="flex items-center gap-4">
+          <Link to='/cart' target="blank">
           <button className="p-2 hover:bg-pink-50 rounded-full transition-colors">
             <ShoppingBag className="w-5 h-5 text-gray-700" />
           </button>
+          </Link>
           <button className="p-2 hover:bg-pink-50 rounded-full transition-colors">
             <Heart className="w-5 h-5 text-pink-500" />
           </button>

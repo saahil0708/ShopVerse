@@ -1,22 +1,31 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from '../Layouts/Customer';
-import HomePage from '../Pages/Customer/HomePage';
-import Product from "../Pages/Customer/Product";
+import HomePage from '../Pages/Customer/Home/HomePage';
+import ProductPage from '../Pages/Customer/Home/ProductPage';
+import ProductDetailPage from "../Components/DetailedProduct";
+import CartPage from "../Pages/Customer/Cart";
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,  // Navbar + Footer will appear on all child routes
+    element: <Layout />,
     children: [
       {
         path: '/',
-        element: <HomePage />,  // Homepage content
+        element: <HomePage />,
       },
       {
         path: '/products',
-        element: <Product />,  // Product page content
+        element: <ProductPage />,
       },
-      // Add more routes here
+      {
+        path: '/products/:productID',
+        element: <ProductDetailPage />
+      },
+      {
+        path: '/cart',
+        element: <CartPage />
+      }
     ],
   },
 ]);

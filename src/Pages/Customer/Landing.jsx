@@ -17,6 +17,7 @@ import {
 
 import Button from '@mui/material/Button';
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   const [isHovered, setIsHovered] = useState(false);
@@ -53,13 +54,14 @@ export default function Landing() {
                     premium skincare and makeup collection!
                   </p>
                 </div>
-
-                <Button onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} variant="contained" className={`!bg-pink-300 !font-[Outfit] !hover:bg-pink-400 !text-black !px-6 !py-3 !rounded-full !font-medium !flex !items-center !gap-2 !transition-colors`}>
-                  Shop Collection
-                  <div className="bg-black rounded-full p-1">
-                    <ArrowUpRight className={`w-4 h-4 text-white ${isHovered ? 'rotate-45 transition-transform duration-300' : ''}`} />
-                  </div>
-                </Button>
+                <Link to='/products'>
+                  <Button onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} variant="contained" className={`!bg-pink-300 !font-[Outfit] !hover:bg-pink-400 !text-black !px-6 !py-3 !rounded-full !font-medium !flex !items-center !gap-2 !transition-colors`}>
+                    Shop Collection
+                    <div className="bg-black rounded-full p-1">
+                      <ArrowUpRight className={`w-4 h-4 text-white ${isHovered ? 'rotate-45 transition-transform duration-300' : ''}`} />
+                    </div>
+                  </Button>
+                </Link>
 
                 <div className="mt-8">
                   <p className="text-gray-600 text-sm mb-3">Follow us on:</p>
